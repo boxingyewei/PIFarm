@@ -17,7 +17,7 @@ class Index extends Controller
     /**
      * 登陆请求
      */
-    public function login()
+    public function login($username="name1", $password="user1")
     {
         // 获取request对象
         $request = $this->request;

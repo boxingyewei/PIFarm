@@ -15,7 +15,7 @@ class ConfigureReader
     /**
      * 获取数据库配置信息
      */
-    private static $CONFIG_DATABASE = require(__DIR__."/../database.php");
+    private static $CONFIG_DATABASE = [];
     
     /**
      * 获取数据库配置文件参数信息
@@ -24,8 +24,7 @@ class ConfigureReader
     {
         if (empty(ConfigureReader::$CONFIG_DATABASE))
         {
-            Log::record("not init database config in ".__DIR__, "error");
-            throw new PIException("not init database config in ".__DIR__);
+            $CONFIG_DATABASE = require(__DIR__."/../database.php");
         }
         if (empty($class) || empty($name))
         {

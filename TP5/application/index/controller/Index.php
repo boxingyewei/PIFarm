@@ -23,11 +23,10 @@ class Index extends Controller
         $request = $this->request;
         print_r($this->request->param());
         // 获取用户信息参数
-        $name = $request->param ( "username" );
+        $username= $request->param ( "username" );
         $password = $request->param ( "password" );
-        
         // 如果不存在数据就跳转到index界面
-        if (empty ( $name ) || empty ( $password ))
+        if (empty ( $username) || empty ( $password ))
         {
             $this->error ( "user name or password error<br>please check!", "/index/index" );
         }
@@ -35,7 +34,7 @@ class Index extends Controller
         {
             // 获取用户信息
             $userinfo = new UserInfo();
-            $data = $userinfo->where("username", $name)->select();
+            $data = $userinfo->where("username", $username)->select();
             if ($data->password == $password)
             {
                 $this->success("login success", "www.baidu.com");

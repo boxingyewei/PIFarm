@@ -21,7 +21,7 @@ class Index extends Controller
     {
         // 获取request对象
         $request = $this->request;
-        
+        print_r($this->request->param());
         // 获取用户信息参数
         $name = $request->param ( "username" );
         $password = $request->param ( "password" );

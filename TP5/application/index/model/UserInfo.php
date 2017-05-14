@@ -16,8 +16,8 @@ class UserInfo extends Model
     {
         try
         {
-            $this->table = ConfigureReader::getConfigParam ( get_class ( $this ), "table" );
-            $this->connection = ConfigureReader::getConfigParam ( get_class ( $this ), "connection" );
+            $this->table = ConfigureReader::getConfigParam ( "UserInfo", "table" );
+            $this->connection = ConfigureReader::getConfigParam ( "UserInfo", "connection" );
         }
         catch(PIException $e)
         {

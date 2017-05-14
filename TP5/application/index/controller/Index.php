@@ -37,10 +37,10 @@ class Index extends Controller
         {
             // 获取用户信息
             $userinfo = new UserInfo();
-            $data = $userinfo->where("username", $username)->select();
-            if ($data->password == $password)
+            $data = $userinfo->where("username", $username)->find();
+            if ($data['password'] == $password)
             {
-                $this->success("login success", "www.baidu.com");
+                $this->success("login success", "http://www.baidu.com");
                 return;
             }
         }

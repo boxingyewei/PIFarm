@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use app\index\model\UserInfo;
+use think\log;
 
 class Index extends Controller
 {
@@ -12,6 +13,7 @@ class Index extends Controller
      */
     public function index()
     {
+        $this->assign("STATIC", "/public/static");
     }
     
     /**
@@ -21,10 +23,10 @@ class Index extends Controller
     {
         // 获取request对象
         $request = $this->request;
-        print_r($this->request->param());
         // 获取用户信息参数
         $username= $request->param ( "username" );
         $password = $request->param ( "password" );
+        Log::write("test jsut", "info");
         // 如果不存在数据就跳转到index界面
         if (empty ( $username) || empty ( $password ))
         {

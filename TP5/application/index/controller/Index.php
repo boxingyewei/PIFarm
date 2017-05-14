@@ -14,6 +14,7 @@ class Index extends Controller
     public function index()
     {
         $this->assign("STATIC", "/public/static");
+        $this->fetch("index");
     }
     
     /**

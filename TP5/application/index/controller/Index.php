@@ -20,13 +20,13 @@ class Index extends Controller
     /**
      * 登陆请求
      */
-    public function login($username="name1", $password="user1")
+    public function login()
     {
         // 获取request对象
         $request = $this->request;
         // 获取用户信息参数
-        $username= $request->param ( "username" );
-        $password = $request->param ( "password" );
+        $username= $request->post("username");
+        $password = $request->post("password");
         Log::write("test jsut", "info");
         // 如果不存在数据就跳转到index界面
         if (empty ( $username) || empty ( $password ))

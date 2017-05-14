@@ -24,7 +24,7 @@ class ConfigureReader
     {
         if (empty(ConfigureReader::$CONFIG_DATABASE))
         {
-            $CONFIG_DATABASE = require(__DIR__."/../database.php");
+            ConfigureReader::$CONFIG_DATABASE = require(__DIR__."/../database.php");
         }
         if (empty($class) || empty($name))
         {
